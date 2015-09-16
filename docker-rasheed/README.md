@@ -77,6 +77,18 @@ another example:
 replace final String url = "https://media.windows.net/";
 with final String url = "https://0.0.0.0:1092/";
 
+another example:
+
+replace
+final String url = "https://wamsprodglobal001acs.accesscontrol.windows.net/v2/OAuth2-13";
+with
+final String url = "https://0.0.0.0:1091/v2/OAuth2-13";
+
+replace
+final String url = "https://media.windows.net/";
+with
+final String url = "https://0.0.0.0:1092/";
+
 4. Add following to log requests and responses after each REST call:
 
         new ProxyClient("localhost", 1090)
