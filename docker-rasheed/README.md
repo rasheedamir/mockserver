@@ -42,6 +42,10 @@ copy the CertificateAuthorityCertificate.pem from mockserver-core and then impor
 
 keytool -import -alias MockServerRoot -keystore truststore.jks -file CertificateAuthorityCertificate.pem 
 
+import in default trust store:
+
+keytool -import -alias MockServerRoot -keystore cacerts -file CertificateAuthorityCertificate.pem
+
 2. Add dependency in the POM file
 
         <!-- mockserver dependencies -->
@@ -107,3 +111,7 @@ docker cp 591d6358fb6d:/opt/mockserver/mockserver_request.log /home/rasheed/Proj
 
 i.e.
 docker cp <containerId>:/file/path/within/container /host/path/target
+
+---------------------------------------------------------------------
+
+sudo ./run_mockserver.sh -logLevel INFO -serverPort 1080 -proxyPort 1090 -proxyRemotePort 443 -proxyRemoteHost esb02.ebstv.net
